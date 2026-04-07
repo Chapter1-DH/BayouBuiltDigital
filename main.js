@@ -39,13 +39,20 @@ function sanitizeForm(form) {
 // FORM SUBMISSION
 async function handleFormSubmit(e, btnId, successText) {
   e.preventDefault();
-  const form   = e.target;
-  const btn    = document.getElementById(btnId);
-  const formId = form.dataset.formId;
+  const form      = e.target;
+  const btn       = document.getElementById(btnId);
+  const formId    = form.dataset.formId;
+  const formEmail = form.dataset.formEmail;
 
   sanitizeForm(form);
 
-  if (!formId || formId.startsWith('YOUR_')) {
+  // Determine Formspree endpoint
+  let endpoint;
+  if (formEmail) {
+    endpoint = 'https://formspree.io/' + formEmail;
+  } else if (formId && !formId.startsWith('YOUR_')) {
+    endpoint = 'https://formspree.io/f/' + formId;
+  } else {
     btn.textContent = 'Coming Soon — Check Back Shortly!';
     btn.disabled    = true;
     btn.style.opacity = '0.65';
@@ -56,7 +63,7 @@ async function handleFormSubmit(e, btnId, successText) {
   btn.disabled    = true;
 
   try {
-    const res = await fetch('https://formspree.io/f/' + formId, {
+    const res = await fetch(endpoint, {
       method: 'POST',
       body: new FormData(form),
       headers: { Accept: 'application/json' }
