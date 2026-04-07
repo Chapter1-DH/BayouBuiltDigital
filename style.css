@@ -729,6 +729,31 @@ nav {
 .team-card:hover { background: var(--surface-2); }
 .team-card:hover::before { opacity: 1; }
 
+.team-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 2px solid var(--teal-border);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    background: var(--surface-3);
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.team-card:hover .team-avatar {
+    border-color: var(--teal);
+    transform: rotate(-3deg) scale(1.05);
+}
+
+.team-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Swap placeholder with real photo: replace svg with <img> inside .team-avatar */
+
 .team-role {
     font-family: 'Space Mono', monospace;
     font-size: 0.58rem;
