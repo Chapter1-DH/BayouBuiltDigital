@@ -685,10 +685,23 @@ nav {
 .team-avatar-placeholder {
     width: 100%;
     height: 100%;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: var(--teal);
 }
 
-/* Swap placeholder with real photo: replace svg with <img> inside .team-avatar */
+/* To add a real photo: replace <div class="team-avatar-placeholder">
+   with <img src="photo.jpg" alt="Name" class="team-avatar-img" /> */
+.team-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .team-role {
     font-family: 'Space Mono', monospace;
@@ -721,6 +734,7 @@ nav {
    ============================================ */
 .testimonials-section {
     padding: 7rem 4rem;
+    text-align: center;
     background:
         radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,149,42,0.06) 0%, transparent 60%),
         linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
@@ -731,7 +745,6 @@ nav {
 .testimonials-inner {
     max-width: 1100px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .testimonials-inner .section-label { justify-content: center; }
@@ -744,7 +757,6 @@ nav {
     gap: 1.5px;
     background: var(--teal-border);
     border: 1px solid var(--teal-border);
-    margin-top: 3.5rem;
 }
 
 .testimonial-card {
