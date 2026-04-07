@@ -756,6 +756,184 @@ nav {
 }
 
 /* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials-section {
+    padding: 7rem 4rem;
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,149,42,0.06) 0%, transparent 60%),
+        linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(201,149,42,0.1);
+}
+
+.testimonials-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--teal-border);
+    border: 1px solid var(--teal-border);
+    margin-top: 3.5rem;
+}
+
+.testimonial-card {
+    background: var(--surface);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+    position: relative;
+}
+
+.testimonial-card:hover { background: var(--surface-2); }
+
+.testimonial-stars {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+}
+
+.testimonial-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: var(--muted);
+    flex: 1;
+    margin-bottom: 1.75rem;
+}
+
+.testimonial-author {
+    border-top: 1px solid var(--teal-border);
+    padding-top: 1.25rem;
+}
+
+.testimonial-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-business {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.56rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+/* ============================================
+   SOCIAL / REVIEWS
+   ============================================ */
+.social-section {
+    padding: 7rem 4rem;
+    text-align: center;
+    background:
+        radial-gradient(ellipse 70% 50% at 50% 100%, rgba(0,214,143,0.06) 0%, transparent 60%),
+        linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%);
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(0,214,143,0.08);
+}
+
+.social-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.social-inner .section-label { justify-content: center; }
+.social-inner .section-label::before { display: none; }
+.social-inner .section-text {
+    margin: 0 auto 3.5rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--teal-border);
+    border: 1px solid var(--teal-border);
+}
+
+.social-card {
+    background: var(--surface);
+    padding: 2.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: default;
+}
+
+.social-card:hover { background: var(--surface-2); }
+
+.social-card--coming-soon {
+    opacity: 0.65;
+}
+
+.social-icon {
+    color: var(--teal);
+    flex-shrink: 0;
+}
+
+.social-card-info { text-align: left; }
+
+.social-card-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 0.25rem;
+}
+
+.social-card-status {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.56rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+/* ============================================
+   FOOTER SOCIAL ICONS
+   ============================================ */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--muted-dim);
+    border: 1px solid var(--teal-border);
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    cursor: default;
+}
+
+.footer-social-link:hover {
+    color: var(--teal);
+    border-color: var(--teal);
+    background: rgba(0, 214, 143, 0.05);
+}
+
+/* ============================================
    CONTACT
    ============================================ */
 .contact-bg {
@@ -1098,9 +1276,15 @@ footer {
     .services-bg,
     .about-section,
     .team-section,
+    .testimonials-section,
+    .social-section,
     .contact-bg { padding: 5rem 2rem; }
 
     .team-grid { grid-template-columns: 1fr; }
+
+    .testimonials-grid { grid-template-columns: 1fr; }
+
+    .social-grid { grid-template-columns: 1fr; }
 
     .about-inner { grid-template-columns: 1fr; gap: 3rem; }
 
@@ -1125,6 +1309,8 @@ footer {
     .services-bg,
     .about-section,
     .team-section,
+    .testimonials-section,
+    .social-section,
     .contact-bg { padding: 4rem 1.5rem; }
 
     .project-card { padding: 2rem 1.5rem; }
