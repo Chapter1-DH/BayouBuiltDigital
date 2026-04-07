@@ -731,7 +731,12 @@ nav {
 .testimonials-inner {
     max-width: 1100px;
     margin: 0 auto;
+    text-align: center;
 }
+
+.testimonials-inner .section-label { justify-content: center; }
+.testimonials-inner .section-label::before { display: none; }
+.testimonials-inner .section-text { margin: 0 auto 3.5rem; }
 
 .testimonials-grid {
     display: grid;
@@ -747,6 +752,7 @@ nav {
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
+    text-align: left;
     transition: background 0.2s;
     position: relative;
 }
