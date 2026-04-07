@@ -8,22 +8,30 @@
   <meta name="description" content="BayouBuilt Digital builds custom, SEO-optimized websites for local businesses in South Louisiana. No templates. No shortcuts. Built to be found." />
   <meta name="keywords" content="web design South Louisiana, small business website Lafayette LA, custom website Vermilion Parish, BayouBuilt Digital, local business website Maurice Louisiana" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dg-fuzion.github.io/BayouBuiltDigital/" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formspree.io;" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dg-fuzion.github.io/BayouBuiltDigital/" />
   <meta property="og:site_name" content="BayouBuilt Digital" />
   <meta property="og:title" content="BayouBuilt Digital | Custom Websites for Local Business" />
   <meta property="og:description" content="They Googled you. Found nothing. Moved on. BayouBuilt Digital builds custom websites for local businesses that demand to be found." />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://dg-fuzion.github.io/BayouBuiltDigital/cestbon-screenshot.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BayouBuilt Digital" />
   <meta name="twitter:description" content="Custom websites for South Louisiana local businesses. SEO-ready, mobile-first, built to convert." />
+  <meta name="twitter:image" content="https://dg-fuzion.github.io/BayouBuiltDigital/cestbon-screenshot.png" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"BayouBuilt Digital","description":"Custom web design and development for local businesses in South Louisiana. SEO-optimized, mobile-first websites built from scratch.","brand":{"@type":"Brand","name":"BayouBuilt Digital"},"areaServed":"South Louisiana","address":{"@type":"PostalAddress","addressLocality":"Maurice","addressRegion":"LA","addressCountry":"US"}}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"BayouBuilt Digital","url":"https://dg-fuzion.github.io/BayouBuiltDigital/","description":"Custom web design and development for local businesses in South Louisiana. SEO-optimized, mobile-first websites built from scratch.","brand":{"@type":"Brand","name":"BayouBuilt Digital"},"areaServed":{"@type":"State","name":"Louisiana"},"serviceType":["Web Design","Web Development","SEO Optimization"],"priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Maurice","addressRegion":"LA","postalCode":"70555","addressCountry":"US"},"knowsLanguage":"en"}
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
 <body>
+
+  <a href="#main-content" class="skip-nav">Skip to content</a>
 
   <!-- NAV -->
   <nav>
@@ -41,6 +49,7 @@
   </nav>
 
   <!-- HERO -->
+  <main id="main-content">
   <section class="hero" id="home">
     <div class="hero-glow"></div>
     <div class="hero-inner">
@@ -93,8 +102,8 @@
               <div class="browser-url">cestbonlaundry.com</div>
             </div>
             <div class="browser-screen">
-              <a href="https://dg-fuzion.github.io/CestBonLaundry/" target="_blank" rel="noopener">
-                <img src="cestbon-screenshot.png" alt="C'est Bon Laundry website screenshot — built by BayouBuilt Digital" style="width:100%;display:block;" loading="lazy" />
+              <a href="https://dg-fuzion.github.io/CestBonLaundry/" target="_blank" rel="noopener" class="project-screenshot-link">
+                <img src="cestbon-screenshot.png" alt="C'est Bon Laundry website screenshot — built by BayouBuilt Digital" width="2227" height="1201" style="width:100%;height:auto;display:block;" loading="lazy" />
               </a>
             </div>
           </div>
@@ -147,10 +156,8 @@
         <div class="section-label">About BayouBuilt</div>
         <h2 class="section-title">Local roots. <em>Digital edge.</em></h2>
         <p class="section-text">BayouBuilt Digital is a South Louisiana web studio run by DeAnna P. Hagan, Michael D. Hagan, and Michael Collins. We build websites for local businesses that deserve more than a template — businesses with a story, a community, and a reputation worth showing online.</p>
-        <br />
-        <p class="section-text">We specialize in small businesses, service providers, and local brands across Vermilion Parish and the surrounding area. If you serve South Louisiana, we build for you.</p>
-        <br />
-        <a href="#contact" class="btn">Start a Conversation</a>
+        <p class="section-text" style="margin-top:1.25rem">We specialize in small businesses, service providers, and local brands across Vermilion Parish and the surrounding area. If you serve South Louisiana, we build for you.</p>
+        <a href="#contact" class="btn" style="margin-top:2rem">Start a Conversation</a>
       </div>
       <div class="about-stats">
         <div class="about-stat">
@@ -240,14 +247,32 @@
         <button type="submit" id="contact-submit-btn" class="btn btn--full">Send Message</button>
 
       </form>
+      <div class="form-success" id="form-success" hidden>
+        <div class="form-success-icon">&#10003;</div>
+        <h3 class="form-success-title">Message Sent</h3>
+        <p class="form-success-text">Thanks for reaching out! We'll get back to you within one business day.</p>
+      </div>
     </div>
   </div>
 
+  </main>
+
   <!-- FOOTER -->
   <footer>
-    <p class="footer-logo">BayouBuilt <span>Digital</span></p>
-    <p>© 2026 D &amp; G Fuzion LLC DBA BayouBuilt Digital &nbsp;·&nbsp; Maurice, Louisiana</p>
+    <div class="footer-inner">
+      <p class="footer-logo">BayouBuilt <span>Digital</span></p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2026 D &amp; G Fuzion LLC DBA BayouBuilt Digital &nbsp;·&nbsp; Maurice, Louisiana</p>
+    </div>
   </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" aria-label="Scroll to top" title="Back to top">&#8593;</button>
 
   <script src="main.js"></script>
 </body>
