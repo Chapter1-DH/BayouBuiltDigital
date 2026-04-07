@@ -883,30 +883,59 @@ nav {
 .social-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px;
-    background: var(--teal-border);
-    border: 1px solid var(--teal-border);
+    gap: 1.5rem;
 }
 
 .social-card {
     background: var(--surface);
-    padding: 2.5rem 2rem;
+    border: 1px solid var(--teal-border);
+    padding: 2rem 1.75rem;
     display: flex;
     align-items: center;
     gap: 1.25rem;
     text-decoration: none;
-    transition: background 0.2s;
+    transition: border-color 0.3s, background 0.3s;
     cursor: default;
+    border-left: 3px solid var(--teal-border);
 }
 
 .social-card:hover { background: var(--surface-2); }
 
-.social-card--coming-soon {
-    opacity: 0.65;
+.social-card--facebook { border-left-color: #1877f2; }
+.social-card--facebook:hover { border-color: #1877f2; }
+
+.social-card--instagram { border-left-color: #e1306c; }
+.social-card--instagram:hover { border-color: #e1306c; }
+
+.social-card--google { border-left-color: var(--gold); }
+.social-card--google:hover { border-color: var(--gold); }
+
+.social-icon-wrap {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.social-icon-wrap--facebook {
+    background: rgba(24, 119, 242, 0.12);
+    color: #1877f2;
+}
+
+.social-icon-wrap--instagram {
+    background: rgba(225, 48, 108, 0.12);
+    color: #e1306c;
+}
+
+.social-icon-wrap--google {
+    background: rgba(201, 149, 42, 0.12);
+    color: var(--gold);
 }
 
 .social-icon {
-    color: var(--teal);
     flex-shrink: 0;
 }
 
@@ -925,10 +954,10 @@ nav {
 .social-card-status {
     font-family: 'Space Mono', monospace;
     font-size: 0.56rem;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--muted-dim);
 }
 
 /* ============================================
