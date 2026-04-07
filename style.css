@@ -353,7 +353,7 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
     padding: 3.5rem;
     border-radius: 4px;
     border: 1px solid transparent;
@@ -467,6 +467,13 @@ nav {
 
 .browser-screen {
     background: #0d1b2a;
+    line-height: 0;
+}
+
+.browser-screen img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Mock site content inside browser */
