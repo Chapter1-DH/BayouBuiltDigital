@@ -173,7 +173,8 @@ nav {
     transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--teal); }
+.nav-links a:hover,
+.nav-links a.active { color: var(--teal); }
 
 /* Hamburger */
 .nav-toggle {
@@ -476,85 +477,17 @@ nav {
     display: block;
 }
 
-/* Mock site content inside browser */
-.mock-nav-bar {
-    height: 28px;
-    background: #0d1b2a;
-    border-bottom: 1px solid rgba(201,149,42,0.2);
+.project-screenshot-link {
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mock-hero-block {
-    background: linear-gradient(160deg, #0d1b2a 0%, #111f33 100%);
-    padding: 1.5rem 1.25rem 1.25rem;
-    border-bottom: 1px solid rgba(201,149,42,0.12);
+.project-screenshot-link:hover {
+    transform: scale(1.02);
 }
 
-.mock-label-bar {
-    height: 5px;
-    width: 60px;
-    background: rgba(201,149,42,0.5);
-    border-radius: 2px;
-    margin-bottom: 0.6rem;
-}
-
-.mock-h1-bar {
-    height: 10px;
-    width: 85%;
-    background: rgba(240,237,230,0.5);
-    border-radius: 2px;
-    margin-bottom: 0.4rem;
-}
-
-.mock-h1-bar--short { width: 55%; }
-
-.mock-divider-bar {
-    width: 32px;
-    height: 2px;
-    background: rgba(201,149,42,0.6);
-    margin: 0.6rem 0;
-}
-
-.mock-sub-bar {
-    height: 5px;
-    width: 70%;
-    background: rgba(240,237,230,0.18);
-    border-radius: 2px;
-    margin-bottom: 0.75rem;
-}
-
-.mock-btn-row {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.mock-btn-bar {
-    height: 16px;
-    width: 60px;
-    background: rgba(201,149,42,0.5);
-    border-radius: 1px;
-}
-
-.mock-btn-bar--ghost {
-    background: transparent;
-    border: 1px solid rgba(201,149,42,0.25);
-}
-
-.mock-section-block {
-    padding: 1rem 1.25rem 1.25rem;
-    background: #122035;
-}
-
-.mock-cards-row {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.mock-card-block {
-    flex: 1;
-    height: 55px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(201,149,42,0.12);
-    border-radius: 2px;
+.browser-mock:has(.project-screenshot-link:hover) {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 214, 143, 0.25), 0 0 40px rgba(0, 214, 143, 0.12);
 }
 
 /* ============================================
@@ -680,6 +613,9 @@ nav {
     text-transform: uppercase;
     color: var(--muted-dim);
 }
+
+.about-text-extra { margin-top: 1.25rem; }
+.about-cta { margin-top: 2rem; }
 
 /* ============================================
    TEAM
@@ -1034,92 +970,6 @@ nav {
 }
 
 /* ============================================
-   FOOTER
-   ============================================ */
-footer {
-    background: var(--surface);
-    border-top: 1px solid var(--teal-border);
-    padding: 2.5rem 4rem;
-    text-align: center;
-}
-
-.footer-logo {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--cream);
-    margin-bottom: 0.5rem;
-}
-
-.footer-logo span { color: var(--teal); }
-
-/* footer-copy styled in Enhanced Footer section */
-
-/* ============================================
-   SKIP NAV (Accessibility)
-   ============================================ */
-.skip-nav {
-    position: absolute;
-    top: -100%;
-    left: 1rem;
-    z-index: 200;
-    background: var(--teal);
-    color: var(--black);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 0 0 4px 4px;
-    transition: top 0.2s;
-}
-
-.skip-nav:focus {
-    top: 0;
-}
-
-/* ============================================
-   FOCUS RINGS (Accessibility)
-   ============================================ */
-.btn:focus-visible,
-.nav-links a:focus-visible,
-.footer-nav a:focus-visible,
-.nav-toggle:focus-visible {
-    outline: 2px solid var(--teal);
-    outline-offset: 3px;
-}
-
-.form-input:focus-visible {
-    border-color: var(--teal);
-    box-shadow: 0 0 0 2px rgba(0, 214, 143, 0.25);
-}
-
-/* ============================================
-   ACTIVE NAV LINK
-   ============================================ */
-.nav-links a.active {
-    color: var(--teal);
-}
-
-/* ============================================
-   PROJECT SCREENSHOT HOVER
-   ============================================ */
-.project-screenshot-link {
-    display: block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-screenshot-link:hover {
-    transform: scale(1.02);
-}
-
-.browser-mock:has(.project-screenshot-link:hover) {
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 214, 143, 0.25), 0 0 40px rgba(0, 214, 143, 0.12);
-}
-
-/* ============================================
    FORM SUCCESS STATE
    ============================================ */
 .form-success {
@@ -1160,8 +1010,94 @@ footer {
 }
 
 /* ============================================
-   SCROLL TO TOP
+   FOOTER
    ============================================ */
+footer {
+    background: var(--surface);
+    border-top: 1px solid var(--teal-border);
+    padding: 2.5rem 4rem;
+    text-align: center;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo span { color: var(--teal); }
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-nav a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted-dim);
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover { color: var(--teal); }
+
+.footer-copy {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted-dim);
+}
+
+/* ============================================
+   UTILITIES — Skip Nav, Focus, Scroll-to-Top
+   ============================================ */
+.skip-nav {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 200;
+    background: var(--teal);
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    transition: top 0.2s;
+}
+
+.skip-nav:focus { top: 0; }
+
+.btn:focus-visible,
+.nav-links a:focus-visible,
+.footer-nav a:focus-visible,
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+}
+
+.form-input:focus-visible {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 2px rgba(0, 214, 143, 0.25);
+}
+
 .scroll-top {
     position: fixed;
     bottom: 2rem;
@@ -1196,42 +1132,6 @@ footer {
 .scroll-top:focus-visible {
     outline: 2px solid var(--teal);
     outline-offset: 3px;
-}
-
-/* ============================================
-   FOOTER (Enhanced)
-   ============================================ */
-.footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 1.25rem;
-}
-
-.footer-nav a {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.58rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--muted-dim);
-    transition: color 0.2s;
-}
-
-.footer-nav a:hover { color: var(--teal); }
-
-.footer-copy {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted-dim);
 }
 
 /* ============================================
