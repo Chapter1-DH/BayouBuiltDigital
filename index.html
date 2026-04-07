@@ -8,7 +8,7 @@
   <meta name="description" content="BayouBuilt Digital builds custom, SEO-optimized websites for local businesses in South Louisiana. No templates. No shortcuts. Built to be found." />
   <meta name="keywords" content="web design South Louisiana, small business website Lafayette LA, custom website Vermilion Parish, BayouBuilt Digital, local business website Maurice Louisiana" />
   <meta name="robots" content="index, follow" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formspree.io;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://forms.office.com; connect-src https://formspree.io;" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="BayouBuilt Digital" />
   <meta property="og:title" content="BayouBuilt Digital | Custom Websites for Local Business" />
@@ -210,38 +210,7 @@
       <p class="section-text">Tell us about your business and we'll get back to you within one business day.</p>
       <p class="section-text"><a href="mailto:contact@bayoubuilt-digital.com">contact@bayoubuilt-digital.com</a></p>
 
-      <form class="contact-form" data-form-email="contact@bayoubuilt-digital.com" onsubmit="handleFormSubmit(event, 'contact-submit-btn', 'Message sent — we\'ll be in touch soon!')">
-
-        <div class="form-row">
-          <div class="form-field">
-            <label class="form-label" for="cf-name">Your Name</label>
-            <input class="form-input" type="text" id="cf-name" name="name" required maxlength="100" autocomplete="name" />
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="cf-business">Business Name</label>
-            <input class="form-input" type="text" id="cf-business" name="business" required maxlength="120" autocomplete="organization" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label class="form-label" for="cf-phone">Phone Number</label>
-            <input class="form-input" type="tel" id="cf-phone" name="phone" required maxlength="20" pattern="[\d\s\(\)\-\+]+" title="Phone number (digits, spaces, dashes, and parentheses only)" autocomplete="tel" />
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="cf-email">Email Address</label>
-            <input class="form-input" type="email" id="cf-email" name="email" required maxlength="254" autocomplete="email" />
-          </div>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="cf-message">Tell Us About Your Project</label>
-          <textarea class="form-input form-textarea" id="cf-message" name="message" rows="5" maxlength="2000" placeholder="What kind of business do you have? What does your current online presence look like? What do you need?" required></textarea>
-        </div>
-
-        <button type="submit" id="contact-submit-btn" class="btn btn--full">Send Message</button>
-
-      </form>
+      <iframe src="https://forms.office.com/r/5DuhxQTWHF" style="width:100%;min-height:600px;border:none;border-radius:8px;" loading="lazy" title="Contact BayouBuilt Digital"></iframe>
     </div>
   </div>
 
