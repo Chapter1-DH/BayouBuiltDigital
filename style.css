@@ -730,9 +730,9 @@ nav {
 }
 
 /* ============================================
-   TESTIMONIALS
+   REVIEWS
    ============================================ */
-.testimonials-section {
+.reviews-section {
     padding: 7rem 4rem;
     text-align: center;
     background:
@@ -742,71 +742,118 @@ nav {
     box-shadow: inset 0 1px 0 rgba(201,149,42,0.1);
 }
 
-.testimonials-inner {
+.reviews-inner {
     max-width: 1100px;
     margin: 0 auto;
 }
 
-.testimonials-inner .section-label { justify-content: center; }
-.testimonials-inner .section-label::before { display: none; }
-.testimonials-inner .section-text { margin: 0 auto 3.5rem; }
+.reviews-inner .section-label { justify-content: center; }
+.reviews-inner .section-label::before { display: none; }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px;
-    background: var(--teal-border);
-    border: 1px solid var(--teal-border);
-}
-
-.testimonial-card {
-    background: var(--surface);
-    padding: 2.5rem 2rem;
+.reviews-overall {
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    transition: background 0.2s;
-    position: relative;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    margin: 2rem 0 3.5rem;
 }
 
-.testimonial-card:hover { background: var(--surface-2); }
-
-.testimonial-stars {
-    font-size: 1rem;
-    letter-spacing: 0.15em;
+.reviews-overall-stars {
     color: var(--gold);
-    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
 }
 
-.testimonial-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.88rem;
-    line-height: 1.9;
-    color: var(--muted);
-    flex: 1;
-    margin-bottom: 1.75rem;
-}
-
-.testimonial-author {
-    border-top: 1px solid var(--teal-border);
-    padding-top: 1.25rem;
-}
-
-.testimonial-name {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
+.reviews-overall-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--cream);
-    margin-bottom: 0.25rem;
+    line-height: 1;
 }
 
-.testimonial-business {
+.reviews-badge {
     font-family: 'Space Mono', monospace;
-    font-size: 0.56rem;
-    font-weight: 400;
+    font-size: 0.72rem;
+    font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    color: var(--muted-dim);
+    border: 1px solid var(--teal-border);
+    padding: 0.25rem 0.85rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.review-card {
+    background: var(--surface);
+    border: 1px solid var(--teal-border);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.3s;
+}
+
+.review-card:hover {
+    border-color: var(--gold);
+}
+
+.review-stars {
     color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--muted);
+    flex: 1;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.review-avatar {
+    width: 2.2rem;
+    height: 2.2rem;
+    background: var(--teal);
+    color: var(--black);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.review-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--cream);
+}
+
+.review-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted-dim);
+    margin-top: 0.15rem;
 }
 
 /* ============================================
@@ -1219,13 +1266,13 @@ footer {
     .services-bg,
     .about-section,
     .team-section,
-    .testimonials-section,
+    .reviews-section,
     .social-section,
     .contact-bg { padding: 5rem 2rem; }
 
     .team-grid { grid-template-columns: 1fr; }
 
-    .testimonials-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
 
     .social-grid { grid-template-columns: 1fr; }
 
@@ -1252,7 +1299,7 @@ footer {
     .services-bg,
     .about-section,
     .team-section,
-    .testimonials-section,
+    .reviews-section,
     .social-section,
     .contact-bg { padding: 4rem 1.5rem; }
 
