@@ -16,7 +16,7 @@
     --gold:         #c9952a;
     --cream:        #f0ede6;
     --muted:        rgba(240, 237, 230, 0.72);
-    --muted-dim:    rgba(240, 237, 230, 0.42);
+    --muted-dim:    rgba(240, 237, 230, 0.55);
 }
 
 /* RESET */
@@ -845,7 +845,178 @@ footer {
 
 .footer-logo span { color: var(--teal); }
 
-footer p {
+/* footer-copy styled in Enhanced Footer section */
+
+/* ============================================
+   SKIP NAV (Accessibility)
+   ============================================ */
+.skip-nav {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 200;
+    background: var(--teal);
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    transition: top 0.2s;
+}
+
+.skip-nav:focus {
+    top: 0;
+}
+
+/* ============================================
+   FOCUS RINGS (Accessibility)
+   ============================================ */
+.btn:focus-visible,
+.nav-links a:focus-visible,
+.footer-nav a:focus-visible,
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+}
+
+.form-input:focus-visible {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 2px rgba(0, 214, 143, 0.25);
+}
+
+/* ============================================
+   ACTIVE NAV LINK
+   ============================================ */
+.nav-links a.active {
+    color: var(--teal);
+}
+
+/* ============================================
+   PROJECT SCREENSHOT HOVER
+   ============================================ */
+.project-screenshot-link {
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-screenshot-link:hover {
+    transform: scale(1.02);
+}
+
+.browser-mock:has(.project-screenshot-link:hover) {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 214, 143, 0.25), 0 0 40px rgba(0, 214, 143, 0.12);
+}
+
+/* ============================================
+   FORM SUCCESS STATE
+   ============================================ */
+.form-success {
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1px solid var(--teal-border);
+    background: var(--surface-2);
+    animation: fadeUp 0.5s ease forwards;
+}
+
+.form-success-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(0, 214, 143, 0.12);
+    border: 2px solid var(--teal);
+    color: var(--teal);
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-success-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+}
+
+.form-success-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+/* ============================================
+   SCROLL TO TOP
+   ============================================ */
+.scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 90;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-2);
+    border: 1px solid var(--teal-border);
+    color: var(--teal);
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, background 0.2s, transform 0.2s;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--teal);
+    color: var(--black);
+    transform: translateY(-2px);
+}
+
+.scroll-top:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+}
+
+/* ============================================
+   FOOTER (Enhanced)
+   ============================================ */
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-nav a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted-dim);
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover { color: var(--teal); }
+
+.footer-copy {
     font-family: 'Inter', sans-serif;
     font-size: 0.62rem;
     letter-spacing: 0.12em;
@@ -930,7 +1101,11 @@ footer p {
 
     footer { padding: 2rem 2rem; }
 
+    .footer-nav { gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
+
     .btn { padding: 1rem 2rem; font-size: 0.68rem; }
+
+    .scroll-top { bottom: 1.25rem; right: 1.25rem; }
 }
 
 /* ============================================
