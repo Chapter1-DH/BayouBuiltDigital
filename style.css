@@ -1656,6 +1656,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .stats-compare-col {
+        padding: 2rem 1.5rem;
+    }
+
     .stats-compare-divider {
         width: 100%;
         height: 1px;
@@ -1666,6 +1670,30 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
+        padding: 1.5rem;
+        border-left: 1px solid rgba(201, 149, 42, 0.22);
+        border-top: 4px solid var(--gold);
+    }
+
+    .stats-hero-card {
+        padding: 2rem 1.5rem 1.75rem;
+    }
+
+    .stats-sources {
+        gap: 0.4rem 0.75rem;
+    }
+
+    .reviews-overall {
+        flex-wrap: wrap;
+        gap: 0.5rem 0.85rem;
+    }
+
+    .reviews-badge {
+        font-size: 0.62rem;
+    }
+
+    .review-card {
+        padding: 1.5rem;
     }
 
     .about-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -1696,8 +1724,97 @@ footer {
     .social-section,
     .contact-bg { padding: 4rem 1.5rem; }
 
-    .stats-hero-num { font-size: 3.5rem; }
+    .stats-section {
+        padding: 4rem 1.25rem;
+    }
+
+    .stats-section::before {
+        width: 500px;
+        height: 500px;
+    }
+
+    .stats-section::after {
+        width: 650px;
+        height: 650px;
+    }
+
+    .stats-hero-num { font-size: 3rem; }
+    .stats-hero-pct { font-size: 1.8rem; }
+    .stats-hero-label { font-size: 0.78rem; }
+
+    .stats-hero-card {
+        padding: 1.75rem 1.25rem 1.5rem;
+    }
+
+    .stats-compare-col {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .stats-compare-title {
+        font-size: 0.95rem;
+    }
+
+    .stats-compare-list li {
+        font-size: 0.78rem;
+    }
+
+    .stats-callout {
+        padding: 1.25rem;
+    }
+
     .stats-callout-num { font-size: 2.5rem; }
+
+    .stats-callout-text {
+        font-size: 0.82rem;
+    }
+
+    .stats-sources a {
+        font-size: 0.5rem;
+    }
+
+    .reviews-section {
+        padding: 4rem 1.25rem;
+    }
+
+    .reviews-overall {
+        margin: 1.5rem 0 2.5rem;
+    }
+
+    .reviews-overall-stars {
+        font-size: 1.25rem;
+    }
+
+    .reviews-overall-num {
+        font-size: 1.6rem;
+    }
+
+    .reviews-badge {
+        font-size: 0.56rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .review-card {
+        padding: 1.25rem;
+    }
+
+    .review-text {
+        font-size: 0.82rem;
+        line-height: 1.7;
+    }
+
+    .review-avatar {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.75rem;
+    }
+
+    .review-name {
+        font-size: 0.75rem;
+    }
+
+    .review-date {
+        font-size: 0.5rem;
+    }
 
     .project-card { padding: 2rem 1.5rem; }
 
