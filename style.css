@@ -620,6 +620,81 @@ nav {
 }
 
 .about-text-extra { margin-top: 1.25rem; }
+
+.about-section .team-inner {
+    max-width: 1100px;
+    margin: 3.5rem auto 0;
+}
+
+/* ============================================
+   HOW IT WORKS — PROCESS
+   ============================================ */
+.process-section {
+    padding: 7rem 4rem;
+    text-align: center;
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(0,214,143,0.06) 0%, transparent 55%),
+        linear-gradient(180deg, var(--black) 0%, var(--surface) 100%);
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(0,214,143,0.08);
+}
+
+.process-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.process-inner .section-label { justify-content: center; }
+.process-inner .section-label::before { display: none; }
+.process-inner .section-text { margin: 0 auto 3.5rem; }
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+    counter-reset: step;
+}
+
+.process-step {
+    background: var(--surface);
+    border: 1px solid var(--teal-border);
+    padding: 2rem 1.5rem;
+    position: relative;
+    transition: border-color 0.3s;
+}
+
+.process-step:hover {
+    border-color: var(--gold);
+}
+
+.process-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: linear-gradient(180deg, rgba(201,149,42,0.35), rgba(201,149,42,0.10));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.process-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+}
+
+.process-desc {
+    font-size: 0.85rem;
+    line-height: 1.85;
+    color: var(--muted);
+}
 .about-cta { margin-top: 2rem; }
 
 /* ============================================
@@ -1351,8 +1426,29 @@ nav {
 }
 
 .contact-inner .section-text {
-    margin-bottom: 3rem;
+    margin-bottom: 1.25rem;
     max-width: 100%;
+}
+
+.contact-availability {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201, 149, 42, 0.25);
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.form-trust {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted-dim);
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
 .contact-form {
@@ -1595,6 +1691,7 @@ footer {
    ============================================ */
 @media (max-width: 1024px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
 
     .project-card { grid-template-columns: 1fr; gap: 3rem; }
     .project-visual { order: -1; }
@@ -1638,13 +1735,13 @@ footer {
     .work-section,
     .services-bg,
     .about-section,
+    .process-section,
     .stats-section,
-    .team-section,
     .reviews-section,
-    .social-section,
     .contact-bg { padding: 5rem 2rem; }
 
     .team-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; }
 
     .reviews-grid { grid-template-columns: 1fr; }
 
@@ -1718,10 +1815,9 @@ footer {
     .work-section,
     .services-bg,
     .about-section,
+    .process-section,
     .stats-section,
-    .team-section,
     .reviews-section,
-    .social-section,
     .contact-bg { padding: 4rem 1.5rem; }
 
     .stats-section {
