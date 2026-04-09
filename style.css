@@ -543,6 +543,11 @@ nav {
     z-index: 1;
 }
 
+.project-more-btn {
+    margin-top: 3rem;
+    display: inline-block;
+}
+
 /* ============================================
    SERVICES
    ============================================ */
