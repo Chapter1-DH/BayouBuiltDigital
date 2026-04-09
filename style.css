@@ -493,6 +493,56 @@ nav {
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 214, 143, 0.25), 0 0 40px rgba(0, 214, 143, 0.12);
 }
 
+/* --- Second project card (reversed layout) --- */
+.project-card--reverse {
+    margin-top: 3rem;
+}
+
+.project-card--reverse .project-info {
+    order: 2;
+}
+
+.project-card--reverse .project-visual {
+    order: 1;
+}
+
+.browser-screen--self {
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.browser-screen--self::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(201,149,42,0.15) 0%, rgba(0,214,143,0.06) 40%, transparent 65%);
+    border-radius: 50%;
+    animation: aura-pulse 6s ease-in-out infinite;
+}
+
+.self-site-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--teal), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
 /* ============================================
    SERVICES
    ============================================ */
@@ -1603,6 +1653,9 @@ footer {
 
     .project-card { grid-template-columns: 1fr; gap: 3rem; }
     .project-visual { order: -1; }
+    .project-card--reverse .project-info { order: 0; }
+    .project-card--reverse .project-visual { order: -1; }
+    .project-card--reverse { margin-top: 2rem; }
 }
 
 /* ============================================
