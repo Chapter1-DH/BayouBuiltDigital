@@ -646,38 +646,63 @@ nav {
 
 .process-inner .section-label { justify-content: center; }
 .process-inner .section-label::before { display: none; }
-.process-inner .section-text { margin: 0 auto 3.5rem; }
+.process-inner .section-text { margin: 0 auto 4rem; }
 
-.process-grid {
+/* --- Horizontal connected timeline --- */
+.process-timeline {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    text-align: left;
-    counter-reset: step;
+    gap: 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Connecting track line */
+.process-track {
+    position: absolute;
+    top: 1.4rem;
+    left: calc(12.5% + 1rem);
+    right: calc(12.5% + 1rem);
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    z-index: 0;
 }
 
 .process-step {
-    background: var(--surface);
-    border: 1px solid var(--teal-border);
-    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
     position: relative;
-    transition: border-color 0.3s;
+    z-index: 1;
 }
 
-.process-step:hover {
-    border-color: var(--gold);
-}
-
-.process-num {
+/* Circular node */
+.process-node {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 900;
-    background: linear-gradient(180deg, rgba(201,149,42,0.35), rgba(201,149,42,0.10));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--black);
+    background: linear-gradient(135deg, var(--teal), var(--gold));
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+    box-shadow:
+        0 0 20px rgba(0, 214, 143, 0.2),
+        0 0 40px rgba(201, 149, 42, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.process-step:hover .process-node {
+    transform: scale(1.12);
+    box-shadow:
+        0 0 30px rgba(0, 214, 143, 0.3),
+        0 0 60px rgba(201, 149, 42, 0.15);
 }
 
 .process-name {
@@ -691,9 +716,10 @@ nav {
 }
 
 .process-desc {
-    font-size: 0.85rem;
-    line-height: 1.85;
+    font-size: 0.82rem;
+    line-height: 1.8;
     color: var(--muted);
+    max-width: 220px;
 }
 .about-cta { margin-top: 2rem; }
 
@@ -1550,7 +1576,30 @@ footer {
    ============================================ */
 @media (max-width: 1024px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 0;
+    }
+
+    .process-track {
+        display: none;
+    }
+
+    .process-node::after {
+        content: '';
+        position: absolute;
+        bottom: -1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 1rem;
+        background: linear-gradient(180deg, var(--teal), transparent);
+    }
+
+    .process-step:nth-child(4) .process-node::after,
+    .process-step:nth-child(5) .process-node::after {
+        display: none;
+    }
 
     .project-card { grid-template-columns: 1fr; gap: 3rem; }
     .project-visual { order: -1; }
@@ -1600,7 +1649,44 @@ footer {
     .contact-bg { padding: 5rem 2rem; }
 
     .team-grid { grid-template-columns: 1fr; }
-    .process-grid { grid-template-columns: 1fr; }
+    .process-timeline {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .process-step {
+        flex-direction: row;
+        text-align: left;
+        gap: 1.25rem;
+        padding: 1.5rem 0;
+        border-left: 2px solid var(--teal-border);
+        margin-left: 1.4rem;
+        padding-left: 1.75rem;
+        align-items: flex-start;
+    }
+
+    .process-step:last-child {
+        border-left-color: transparent;
+    }
+
+    .process-node {
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 1rem;
+        margin-bottom: 0;
+        margin-left: -2.95rem;
+        box-shadow:
+            0 0 15px rgba(0, 214, 143, 0.15),
+            0 0 30px rgba(201, 149, 42, 0.08);
+    }
+
+    .process-node::after {
+        display: none;
+    }
+
+    .process-desc {
+        max-width: none;
+    }
 
     .reviews-grid { grid-template-columns: 1fr; }
 
