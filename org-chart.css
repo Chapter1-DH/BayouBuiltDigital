@@ -1,0 +1,362 @@
+/* ============================================
+   BAYOUBUILT DIGITAL — ORG CHART
+   Standalone page styles
+   ============================================ */
+
+/* ── HERO ─────────────────────────────────── */
+.org-hero {
+    padding: 10rem 4rem 4rem;
+    text-align: center;
+    background:
+        radial-gradient(ellipse 70% 55% at 60% -10%, rgba(0,214,143,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 45% at -5% 80%, rgba(0,214,143,0.12) 0%, transparent 50%),
+        linear-gradient(170deg, #071009 0%, #050c08 45%, #091209 100%);
+}
+
+.org-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.org-hero-inner .section-label {
+    justify-content: center;
+}
+
+.org-hero-inner .section-label::before { display: none; }
+
+.org-hero-inner .section-text {
+    margin: 0 auto;
+}
+
+.org-back {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted-dim);
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.org-back:hover { color: var(--teal); }
+
+/* ── ORG SECTION ──────────────────────────── */
+.org-section {
+    padding: 5rem 4rem 3rem;
+    background: linear-gradient(180deg, var(--black) 0%, var(--surface) 100%);
+}
+
+.org-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ── GROUP LABELS ─────────────────────────── */
+.org-group-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.org-group-label::before,
+.org-group-label::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, rgba(201,149,42,0.4));
+}
+
+.org-group-label::after {
+    background: linear-gradient(90deg, rgba(201,149,42,0.4), transparent);
+}
+
+/* ── ORG CHART TREE ───────────────────────── */
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ── ORG LEVELS ───────────────────────────── */
+.org-level {
+    display: flex;
+    justify-content: center;
+    gap: 1.5px;
+    width: 100%;
+}
+
+.org-level--top {
+    max-width: 380px;
+}
+
+.org-level--mid,
+.org-level--bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5px;
+    background: var(--teal-border);
+    border: 1px solid var(--teal-border);
+    margin-bottom: 0;
+}
+
+.org-level--bottom {
+    background: rgba(201,149,42,0.22);
+    border-color: rgba(201,149,42,0.22);
+}
+
+/* ── ORG CARD ─────────────────────────────── */
+.org-card {
+    background: var(--surface);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: background 0.2s;
+    position: relative;
+}
+
+.org-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.org-card:hover { background: var(--surface-2); }
+.org-card:hover::before { opacity: 1; }
+
+/* Lead card (top of chart) */
+.org-card--lead {
+    border: 1px solid var(--teal-border);
+    background: var(--surface-2);
+    padding: 3rem 2.5rem;
+}
+
+.org-card--lead::before {
+    opacity: 1;
+}
+
+.org-card--lead:hover {
+    background: var(--surface-3);
+}
+
+/* ── BADGE ────────────────────────────────── */
+.org-badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.48rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,149,42,0.35);
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1.25rem;
+    background: rgba(201,149,42,0.06);
+}
+
+/* ── AVATAR ───────────────────────────────── */
+.org-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--teal-border);
+    overflow: hidden;
+    margin: 0 auto 1.25rem;
+    background: var(--surface-3);
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.org-card:hover .org-avatar {
+    border-color: var(--teal);
+    transform: rotate(-3deg) scale(1.05);
+}
+
+.org-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+}
+
+.org-card--lead .org-avatar {
+    width: 96px;
+    height: 96px;
+}
+
+.org-card--lead .org-avatar-placeholder {
+    font-size: 1.5rem;
+}
+
+/* ── ROLE ─────────────────────────────────── */
+.org-role {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.56rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+}
+
+/* ── NAME ─────────────────────────────────── */
+.org-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    margin-bottom: 0.85rem;
+}
+
+/* ── DESCRIPTION ──────────────────────────── */
+.org-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* ── CONNECTORS (lines between levels) ────── */
+.org-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.org-connector-stem {
+    width: 2px;
+    height: 32px;
+    background: linear-gradient(180deg, var(--teal), var(--teal-mid));
+}
+
+.org-connector-branch {
+    width: 50%;
+    height: 2px;
+    background: var(--teal-border);
+    position: relative;
+}
+
+.org-connector-branch::before,
+.org-connector-branch::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 32px;
+    background: linear-gradient(180deg, var(--teal-mid), var(--teal-border));
+}
+
+.org-connector-branch::before { left: 0; }
+.org-connector-branch::after { right: 0; }
+
+.org-connector--ops .org-connector-stem {
+    height: 48px;
+    background: linear-gradient(180deg, var(--teal-border), rgba(201,149,42,0.35));
+}
+
+.org-connector--ops .org-connector-branch {
+    background: rgba(201,149,42,0.3);
+}
+
+.org-connector--ops .org-connector-branch::before,
+.org-connector--ops .org-connector-branch::after {
+    background: linear-gradient(180deg, rgba(201,149,42,0.35), rgba(201,149,42,0.22));
+}
+
+/* ── CTA SECTION ──────────────────────────── */
+.org-cta-section {
+    padding: 5rem 4rem;
+    text-align: center;
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(0,214,143,0.06) 0%, transparent 55%),
+        linear-gradient(180deg, var(--surface) 0%, var(--black) 100%);
+}
+
+.org-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.org-cta-inner .section-title {
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   RESPONSIVE — 768px
+   ============================================ */
+@media (max-width: 768px) {
+    .org-hero { padding: 8rem 2rem 3rem; }
+    .org-section { padding: 4rem 2rem 2rem; }
+    .org-cta-section { padding: 4rem 2rem; }
+
+    .org-level--top { max-width: 100%; }
+
+    .org-level--mid,
+    .org-level--bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .org-connector-branch {
+        width: 2px;
+        height: 24px;
+    }
+
+    .org-connector-branch::before,
+    .org-connector-branch::after {
+        display: none;
+    }
+
+    .org-card { padding: 2rem 1.5rem; }
+    .org-card--lead { padding: 2.5rem 2rem; }
+}
+
+/* ============================================
+   RESPONSIVE — 480px
+   ============================================ */
+@media (max-width: 480px) {
+    .org-hero { padding: 7rem 1.5rem 2.5rem; }
+    .org-section { padding: 3rem 1.25rem 2rem; }
+    .org-cta-section { padding: 3rem 1.5rem; }
+
+    .org-card { padding: 1.75rem 1.25rem; }
+    .org-card--lead { padding: 2rem 1.5rem; }
+
+    .org-avatar { width: 64px; height: 64px; }
+    .org-avatar-placeholder { font-size: 1.1rem; }
+    .org-card--lead .org-avatar { width: 76px; height: 76px; }
+    .org-card--lead .org-avatar-placeholder { font-size: 1.3rem; }
+
+    .org-desc { font-size: 0.78rem; }
+
+    .org-group-label::before,
+    .org-group-label::after { width: 30px; }
+}
