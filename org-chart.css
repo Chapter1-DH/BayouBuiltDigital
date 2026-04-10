@@ -103,19 +103,35 @@
     max-width: 380px;
 }
 
-.org-level--mid,
+/* Asymmetric layout: two branches side by side */
+.org-level--asymmetric {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: none;
+    border: none;
+    align-items: start;
+}
+
+/* Individual branch column */
+.org-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-branch > .org-card {
+    border: 1px solid var(--teal-border);
+    width: 100%;
+}
+
 .org-level--bottom {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5px;
-    background: var(--teal-border);
-    border: 1px solid var(--teal-border);
-    margin-bottom: 0;
-}
-
-.org-level--bottom {
     background: rgba(201,149,42,0.22);
-    border-color: rgba(201,149,42,0.22);
+    border: 1px solid rgba(201,149,42,0.22);
+    width: 100%;
 }
 
 /* ── ORG CARD ─────────────────────────────── */
@@ -278,8 +294,13 @@
 .org-connector-branch::before { left: 0; }
 .org-connector-branch::after { right: 0; }
 
+/* Ops connector (inside a branch — no horizontal split needed) */
+.org-connector--ops {
+    max-width: 100%;
+}
+
 .org-connector--ops .org-connector-stem {
-    height: 48px;
+    height: 32px;
     background: linear-gradient(180deg, var(--teal-border), rgba(201,149,42,0.35));
 }
 
@@ -320,7 +341,11 @@
 
     .org-level--top { max-width: 100%; }
 
-    .org-level--mid,
+    .org-level--asymmetric {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
     .org-level--bottom {
         grid-template-columns: 1fr;
     }
