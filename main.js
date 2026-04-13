@@ -61,72 +61,52 @@
   });
 })();
 
-// ── INPUT SANITIZATION ──────────────────────
-function sanitizeInput(value) {
-  return value
-    .trim()
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;')
-    .replace(/\//g, '&#x2F;');
-}
-
-function sanitizeForm(form) {
-  form.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"], textarea').forEach(function (el) {
-    el.value = sanitizeInput(el.value);
-  });
-}
-
 // ── FORM SUBMISSION ─────────────────────────
-async function handleFormSubmit(e, btnId, successText) {
-  e.preventDefault();
-  var form      = e.target;
-  var btn       = document.getElementById(btnId);
-  var formId    = form.dataset.formId;
-  var formEmail = form.dataset.formEmail;
+(function () {
+  var container = document.getElementById('contact-form');
+  var link      = document.getElementById('contact-submit-btn');
+  if (!container || !link) return;
 
-  sanitizeForm(form);
+  var emailTo = 'contact@bayoubuilt-digital.com';
+  var fields  = container.querySelectorAll('input, textarea');
 
-  // Determine Formspree endpoint
-  var endpoint;
-  if (formEmail) {
-    endpoint = 'https://formspree.io/' + formEmail;
-  } else if (formId && !formId.startsWith('YOUR_')) {
-    endpoint = 'https://formspree.io/f/' + formId;
-  } else {
-    btn.textContent   = 'Coming Soon — Check Back Shortly!';
-    btn.disabled      = true;
-    btn.style.opacity = '0.65';
-    return;
+  function buildMailto() {
+    var name     = (container.querySelector('#cf-name').value || '').trim();
+    var business = (container.querySelector('#cf-business').value || '').trim();
+    var phone    = (container.querySelector('#cf-phone').value || '').trim();
+    var email    = (container.querySelector('#cf-email').value || '').trim();
+    var message  = (container.querySelector('#cf-message').value || '').trim();
+
+    var subject = 'New Project Inquiry from ' + name + ' — ' + business;
+    var body    = 'Name: ' + name + '\n'
+                + 'Business: ' + business + '\n'
+                + 'Phone: ' + phone + '\n'
+                + 'Email: ' + email + '\n\n'
+                + message;
+
+    link.href = 'mailto:' + emailTo
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body='    + encodeURIComponent(body);
   }
 
-  btn.textContent = 'Sending…';
-  btn.disabled    = true;
+  // Rebuild mailto href as user types
+  fields.forEach(function (field) {
+    field.addEventListener('input', buildMailto);
+  });
 
-  try {
-    var res = await fetch(endpoint, {
-      method:  'POST',
-      body:    new FormData(form),
-      headers: { Accept: 'application/json' }
-    });
-
-    if (res.ok) {
-      var successEl = document.getElementById('form-success');
-      if (successEl) {
-        form.hidden      = true;
-        successEl.hidden = false;
+  // Validate before navigating
+  link.addEventListener('click', function (e) {
+    var valid = true;
+    fields.forEach(function (field) {
+      if (!field.value.trim()) {
+        field.classList.add('form-input--error');
+        valid = false;
       } else {
-        btn.textContent   = successText;
-        btn.style.opacity = '0.65';
-        form.querySelectorAll('input, select, textarea').forEach(function (el) { el.disabled = true; });
+        field.classList.remove('form-input--error');
       }
-    } else {
-      btn.textContent = 'Something went wrong — try again';
-      btn.disabled    = false;
+    });
+    if (!valid) {
+      e.preventDefault();
     }
-  } catch (err) {
-    btn.textContent = 'Connection error — try again';
-    btn.disabled    = false;
-  }
-}
+  });
+})();
