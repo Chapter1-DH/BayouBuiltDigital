@@ -8,7 +8,7 @@
   <meta name="keywords" content="web design Maurice LA, custom website Vermilion Parish, small business website Lafayette LA, web design Abbeville Louisiana, affordable web design Acadiana, website designer South Louisiana, custom website Louisiana, BayouBuilt Digital, local business website Maurice Louisiana, custom web design Lafayette" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://bayoubuilt-digital.com/" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formspree.io;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:;" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bayoubuilt-digital.com/" />
   <meta property="og:site_name" content="BayouBuilt Digital" />
@@ -383,13 +383,13 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact-bg" id="contact">
+<section class="contact-bg" id="contact">
     <div class="contact-inner">
       <div class="section-label">Let's Talk</div>
       <h2 class="section-title">Your next customer is <em>already searching.</em></h2>
       <p class="section-text">Every project is scoped to fit your business. Tell us what you need and we'll put together a custom proposal — no pressure, no obligation.</p>
       <div class="contact-availability">Currently booking projects for May 2026</div>
-      <form class="contact-form" data-form-email="contact@bayoubuilt-digital.com" onsubmit="handleFormSubmit(event, 'contact-submit-btn', 'Message sent — we\'ll be in touch soon!')">
+      <div class="contact-form" id="contact-form">
 
         <div class="form-row">
           <div class="form-field">
@@ -405,7 +405,7 @@
         <div class="form-row">
           <div class="form-field">
             <label class="form-label" for="cf-phone">Phone Number</label>
-            <input class="form-input" type="tel" id="cf-phone" name="phone" required maxlength="20" pattern="[\d\s\(\)\-\+]+" title="Phone number (digits, spaces, dashes, and parentheses only)" autocomplete="tel" />
+            <input class="form-input" type="tel" id="cf-phone" name="phone" required maxlength="20" autocomplete="tel" />
           </div>
           <div class="form-field">
             <label class="form-label" for="cf-email">Email Address</label>
@@ -418,14 +418,9 @@
           <textarea class="form-input form-textarea" id="cf-message" name="message" rows="5" maxlength="2000" placeholder="What kind of business do you have? What does your current online presence look like? What do you need?" required></textarea>
         </div>
 
-        <button type="submit" id="contact-submit-btn" class="btn btn--full">Get My Free Consultation</button>
+        <a href="mailto:contact@bayoubuilt-digital.com" id="contact-submit-btn" class="btn btn--full">Get My Free Consultation</a>
         <p class="form-trust">We respond within one business day. Your information stays private.</p>
 
-      </form>
-      <div class="form-success" id="form-success" hidden>
-        <div class="form-success-icon">&#10003;</div>
-        <h3 class="form-success-title">Message Sent</h3>
-        <p class="form-success-text">Thanks for reaching out! We'll get back to you within one business day.</p>
       </div>
     </div>
   </section>

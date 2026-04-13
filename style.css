@@ -1434,6 +1434,10 @@ nav {
     border-color: var(--teal);
 }
 
+.form-input--error {
+    border-color: #e74c3c;
+}
+
 .form-input::placeholder {
     color: rgba(240, 237, 230, 0.2);
 }
